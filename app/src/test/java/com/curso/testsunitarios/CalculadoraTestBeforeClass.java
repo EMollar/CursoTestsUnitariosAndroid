@@ -2,6 +2,8 @@ package com.curso.testsunitarios;
 
 import com.curso.testsunitarios.calculadora.Calculadora;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -47,6 +49,21 @@ public class CalculadoraTestBeforeClass {
         assertEquals("numeroBeforeClass: ", 9, numeroBeforeClass);
         assertEquals("numeroBefore: ", 6, numeroBefore);
         System.out.println("Se ha realizado el pruebaBeforeVsBeforeClass2()");
+    }
+
+    @AfterClass
+    public static void afterClass(){
+        calculadoraBeforeClass = null;
+        numeroBeforeClass = 0;
+        System.out.println("Se ha realizado afterClass()");
+    }
+
+    @After
+    public void after(){
+        calculadoraBefore = null;
+        numeroBefore = 0;
+        System.out.println("Se ha realizado after()");
+
     }
 
 }
